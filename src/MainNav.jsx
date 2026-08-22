@@ -5,7 +5,6 @@ export default function MainNav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isTopNavMobileOpen, setIsTopNavMobileOpen] = useState(false);
 
-  // Top Nav-ի հղումները
   const topLinks = [
     { label: 'Անհատ', path: '/anhat' },
     { label: 'Բիզնես', path: '/business' },
@@ -16,10 +15,9 @@ export default function MainNav() {
     { label: 'Կարիերա', path: '/career' },
   ];
 
-  // Main Nav-ի հիմնական հղումները
   const menuItems = [
     { label: 'Վարկեր', path: '/loans' },
-    { label: 'Քարտեր', path: '/cards' },
+    { label: 'Քարտեր', path: '/qarter' },
     { label: 'Ավանդներ', path: '/deposits' },
     { label: 'Հաշիվներ', path: '/accounts' },
     { label: 'Փոխանցումներ', path: '/transfers' },
@@ -33,14 +31,12 @@ export default function MainNav() {
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2 sm:space-x-4 xl:space-x-10 max-[300px]:space-x-1">
           
-          {/* Evoca Logo -> Տանում է Գլխավոր (Home.jsx) էջ */}
           <Link to="/" className="flex items-center select-none">
             <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-500 font-sans lowercase max-[300px]:text-lg">
               e<span className="text-[#6200EE]">v</span>oca
             </span>
           </Link>
 
-          {/* Mobile Grid Menu Button */}
           <div className="xl:hidden relative">
             <button
               onClick={() => {
@@ -55,7 +51,6 @@ export default function MainNav() {
               </svg>
             </button>
 
-            {/* Mobile Dropdown */}
             {isTopNavMobileOpen && (
               <div className="absolute left-0 mt-2 w-48 bg-white rounded-2xl shadow-2xl py-3 px-4 z-50 border border-gray-100">
                 <div className="flex flex-col space-y-2">
@@ -80,7 +75,6 @@ export default function MainNav() {
             )}
           </div>
 
-          {/* Desktop Nav Items */}
           <nav className="hidden xl:flex items-center space-x-6 xl:space-x-8 text-sm font-bold text-gray-900">
             {menuItems.map((item, index) => (
               <NavLink
@@ -98,7 +92,6 @@ export default function MainNav() {
           </nav>
         </div>
 
-        {/* Կոճակ + Main Mobile Burger Icon */}
         <div className="flex items-center space-x-2 sm:space-x-4 max-[300px]:space-x-1">
           <button className="bg-[#6200EE] hover:bg-purple-700 text-white text-xs sm:text-sm font-bold px-3 sm:px-6 py-1.5 sm:py-2.5 rounded-full shadow-md transition cursor-pointer max-[300px]:px-2 max-[300px]:text-[10px]">
             <span className="max-[300px]:hidden">EvocaONLINE</span>
@@ -123,7 +116,6 @@ export default function MainNav() {
         </div>
       </div>
 
-      {/* Mobile Menu Panel */}
       {isMobileMenuOpen && (
         <div className="xl:hidden mt-3 pt-3 border-t border-gray-100 flex flex-col space-y-1 bg-white">
           {menuItems.map((item, index) => (

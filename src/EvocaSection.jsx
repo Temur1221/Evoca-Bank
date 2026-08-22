@@ -9,7 +9,6 @@ export default function EvocaSection() {
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        // Firebase Collection-ի անունը՝ "Evoca Cards"
         const querySnapshot = await getDocs(collection(db, "Evoca Cards"));
         const fetchedCards = querySnapshot.docs.map((doc) => ({
           id: doc.id,
@@ -40,35 +39,29 @@ export default function EvocaSection() {
     <div className="w-full bg-white py-8 px-4">
       <section className="relative mx-auto min-h-[520px] w-full max-w-[1300px] overflow-hidden rounded-t-[60px] rounded-b-[60px] bg-[#6200EE] px-8 py-12 text-white shadow-2xl md:rounded-tl-[80px] md:rounded-br-[80px]">
         
-        {/* ================= ՖՈՆԱՅԻՆ ԴԵԿՈՐՆԵՐ ================= */}
         <div className="pointer-events-none absolute -left-10 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full border border-white/10" />
         <div className="pointer-events-none absolute -left-20 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full border border-white/5" />
         <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-purple-500/20 blur-3xl" />
         <div className="pointer-events-none absolute -right-10 bottom-0 h-72 w-72 rounded-full bg-purple-700/30 blur-2xl" />
 
-        {/* ================= ԲՈՎԱՆԴԱԿՈՒԹՅՈՒՆ ================= */}
         <div className="relative z-10 mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-8 lg:flex-row lg:items-center">
           
-          {/* ՁԱԽ ԿՈՂՄ՝ ՄԻԱՅՆ ԱՐՁԱՆԸ */}
           <div className="flex w-full max-w-[320px] justify-center lg:justify-start">
             <div className="relative h-[320px] w-full">
               <img
-                src="https://www.evoca.am/img/temp/best/statue.png"
+                src="https://www.evoca.am/img/statue-1.png"
                 alt="Evocabank Statue"
                 className="h-full w-full object-contain"
               />
             </div>
           </div>
 
-          {/* ԱՋ ԿՈՂՄ՝ ՎԵՐՆԱԳԻՐԸ + ՔԱՐՏԵՐԸ */}
           <div className="flex w-full max-w-[760px] flex-col items-start gap-6">
             
-            {/* ՎԵՐՆԱԳԻՐԸ ՔԱՐՏԵՐԻ ՎԵՐԵՎՈՒՄ */}
             <h2 className="text-2xl font-bold md:text-3xl">
               Լավագույնը Evocabank-ից
             </h2>
 
-            {/* ՔԱՐՏԵՐԻ GRID-Ը */}
             <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2">
               {cards.length === 0 ? (
                 <div className="col-span-2 text-center text-lg text-white/80">
@@ -81,17 +74,14 @@ export default function EvocaSection() {
                     className="flex flex-col justify-between rounded-2xl bg-white p-6 text-[#171717] shadow-xl transition-all duration-300 hover:-translate-y-1"
                   >
                     <div>
-                      {/* TAG */}
                       <span className="inline-block rounded-full bg-[#F3E8FF] px-3 py-1 text-[11px] font-semibold text-[#6200EE]">
                         {card.tag}
                       </span>
 
-                      {/* TITLE */}
                       <h3 className="mt-3 text-lg font-bold leading-snug text-[#171717]">
                         {card.title}
                       </h3>
 
-                      {/* DESCRIPTION */}
                       <p className="mt-2 text-xs leading-relaxed text-gray-600">
                         {card.description}
                       </p>

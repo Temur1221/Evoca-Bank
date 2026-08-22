@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { db } from './firebase'; 
 import { collection, onSnapshot } from 'firebase/firestore';
 
@@ -7,7 +8,6 @@ export default function LoansPage() {
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState('all');
 
-  // Կատեգորիաները ըստ Firebase-ի category դաշտի
   const categories = [
     { id: 'all', label: 'Բոլորը' },
     { id: 'gravov', label: 'Գրավով ապահովված սպառողական վարկեր' },
@@ -18,7 +18,6 @@ export default function LoansPage() {
     { id: 'online', label: 'Օնլայն վարկեր' },
   ];
 
-  // Real-time տվյալների ստացում Firebase-ից
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, 'loans'), (snapshot) => {
       const loansData = snapshot.docs.map((doc) => ({
@@ -32,30 +31,65 @@ export default function LoansPage() {
     return () => unsubscribe();
   }, []);
 
-  // Ֆիլտրում ըստ ընտրված կատեգորիայի
   const filteredLoans = activeCategory === 'all' 
     ? loans 
     : loans.filter((loan) => loan.category === activeCategory);
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 py-8 font-sans">
-      {/* 🔗 Navigation Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-gray-500 mb-6">
-        <a href="/" className="hover:text-[#6200EE] transition-colors">🏠</a>
+        <NavLink to="/" className="hover:text-[#6200EE] transition-colors">🏠</NavLink>
         <span>›</span>
-        <a href="/anhat" className="hover:text-[#6200EE] transition-colors">Անհատ</a>
-        <span>›</span>
-        <span className="text-gray-400">Վարկեր</span>
+        <NavLink to="/anhat" className="hover:text-[#6200EE] transition-colors">Անհատ</NavLink>
         <span>›</span>
         <span className="text-gray-800 font-medium">Վարկեր</span>
       </div>
 
-      {/* 📌 Վերնագիր */}
       <h1 className="text-3xl sm:text-4xl font-extrabold text-[#1c1c1c] mb-8">
         Վարկեր
       </h1>
 
-      {/* 🏷️ Category Tabs (Ֆիլտրեր) */}
+      <div className="flex flex-wrap bg-[#6200EE] text-white rounded-t-xl overflow-hidden mb-8">
+        <NavLink
+          to="/anhat/loans"
+          className={({ isActive }) =>
+            `py-4 px-6 text-sm sm:text-base font-semibold transition-colors ${
+              isActive
+                ? 'bg-[#4B00B5] text-white border-b-4 border-white'
+                : 'hover:bg-[#5200C6] text-purple-200'
+            }`
+          }
+        >
+          Վարկեր
+        </NavLink>
+
+        <NavLink
+          to="/anhat/credit-history"
+          className={({ isActive }) =>
+            `py-4 px-6 text-sm sm:text-base font-semibold transition-colors ${
+              isActive
+                ? 'bg-[#4B00B5] text-white border-b-4 border-white'
+                : 'hover:bg-[#5200C6] text-purple-200'
+            }`
+          }
+        >
+          Վարկային պատմություն և սքոր
+        </NavLink>
+
+        <NavLink
+          to="/anhat/important-info"
+          className={({ isActive }) =>
+            `py-4 px-6 text-sm sm:text-base font-semibold transition-colors ${
+              isActive
+                ? 'bg-[#4B00B5] text-white border-b-4 border-white'
+                : 'hover:bg-[#5200C6] text-purple-200'
+            }`
+          }
+        >
+          Կարևոր տեղեկատվություն
+        </NavLink>
+      </div>
+
       <div className="flex flex-wrap gap-2.5 mb-12">
         {categories.map((cat) => (
           <button
@@ -72,7 +106,6 @@ export default function LoansPage() {
         ))}
       </div>
 
-      {/* 🔄 Բեռնման կամ Դատարկ վիճակի ստուգում */}
       {loading ? (
         <div className="py-20 text-center text-gray-400 font-medium animate-pulse">
           Վարկերի ցանկը բեռնվում է...
@@ -82,14 +115,12 @@ export default function LoansPage() {
           Այս բաժնում վարկեր չեն գտնվել:
         </div>
       ) : (
-        /* 📜 ՎԱՐԿԵՐԻ ՑԱՆԿԸ */
         <div className="flex flex-col gap-10">
           {filteredLoans.map((loan) => (
             <div
               key={loan.id}
               className="flex flex-col lg:flex-row items-center justify-between gap-8 bg-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
             >
-              {/* 🖼️ ՆԿԱՐԻ ԲԼՈԿ */}
               <div className="w-full lg:w-[340px] h-[220px] bg-[#6200EE] rounded-3xl flex items-center justify-center shrink-0 overflow-hidden">
                 {loan.imageUrl ? (
                   <img
@@ -102,7 +133,6 @@ export default function LoansPage() {
                 )}
               </div>
 
-              {/* 📝 ՏԵՂԵԿԱՏՎՈՒԹՅՈՒՆ */}
               <div className="flex-1 w-full">
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1c1c1c] mb-3">
                   {loan.title}
@@ -112,10 +142,7 @@ export default function LoansPage() {
                   {loan.description}
                 </p>
 
-                {/* 📊 ՑՈՒՑԱՆԻՇՆԵՐ */}
                 <div className="flex flex-wrap gap-x-8 gap-y-4 mb-8 max-w-[850px]">
-                  
-                  {/* 1. Գումար */}
                   {loan.maxAmount && (
                     <div>
                       <span className="text-[11px] text-gray-400 font-medium block mb-1">
@@ -130,7 +157,6 @@ export default function LoansPage() {
                     </div>
                   )}
 
-                  {/* 2. Հիմնական Ժամկետ */}
                   {loan.maxTerm && (
                     <div>
                       <span className="text-[11px] text-gray-400 font-medium block mb-1">
@@ -145,22 +171,6 @@ export default function LoansPage() {
                     </div>
                   )}
 
-                  {/* 3. Երկրորդ Ժամկետ (Գույքի գրավով վարկի համար) */}
-                  {loan.secondTerm && (
-                    <div>
-                      <span className="text-[11px] text-gray-400 font-medium block mb-1">
-                        {loan.secondTermPrefix || 'շարժական գույքի դեպքում'}
-                      </span>
-                      <span className="text-xl sm:text-2xl font-black text-[#6200EE]">
-                        {loan.secondTerm}
-                      </span>
-                      <span className="text-xs text-gray-500 block mt-1 font-medium">
-                        {loan.secondTermLabel || 'Վարկի մարման ժամկետը'}
-                      </span>
-                    </div>
-                  )}
-
-                  {/* 4. Տոկոսադրույք */}
                   {loan.minRate && (
                     <div>
                       <span className="text-[11px] text-gray-400 font-medium block mb-1">
@@ -174,40 +184,8 @@ export default function LoansPage() {
                       </span>
                     </div>
                   )}
-
-                  {/* 5. Լրացուցիչ ցուցանիշ (օր․՝ Ոսկու գրավի 150%-ը) */}
-                  {loan.extraStat && (
-                    <div>
-                      <span className="text-[11px] text-gray-400 font-medium block mb-1">
-                        մինչև
-                      </span>
-                      <span className="text-xl sm:text-2xl font-black text-[#6200EE]">
-                        {loan.extraStat}
-                      </span>
-                      <span className="text-xs text-gray-500 block mt-1 font-medium max-w-[140px]">
-                        {loan.extraStatLabel || 'Հարաբերակցություն'}
-                      </span>
-                    </div>
-                  )}
-
-                  {/* 6. Կանխավճար (Ավտովարկի և Հիփոթեքի համար) */}
-                  {loan.downPayment && (
-                    <div>
-                      <span className="text-[11px] text-gray-400 font-medium block mb-1">
-                        {loan.downPaymentPrefix || 'սկսած'}
-                      </span>
-                      <span className="text-xl sm:text-2xl font-black text-[#6200EE]">
-                        {loan.downPayment}
-                      </span>
-                      <span className="text-xs text-gray-500 block mt-1 font-medium">
-                        {loan.downPaymentLabel || 'Կանխավճար'}
-                      </span>
-                    </div>
-                  )}
-
                 </div>
 
-                {/* 🔘 Մանրամասն Կոճակը */}
                 <button className="bg-[#f0e7ff] hover:bg-[#e4d3ff] text-[#6200EE] font-bold text-xs sm:text-sm px-6 py-3 rounded-full transition-all duration-200 flex items-center gap-2 cursor-pointer group">
                   <span>Մանրամասն</span>
                   <span className="transition-transform duration-200 group-hover:translate-x-1">›</span>

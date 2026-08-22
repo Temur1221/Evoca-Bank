@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { db } from './firebase';
 import { collection, getDocs } from 'firebase/firestore';
 
@@ -13,6 +14,7 @@ import 'swiper/css/navigation';
 const PartnersSection = () => {
   const [partners, setPartners] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   // Custom Navigation buttons-ի reference-ները
   const prevRef = useRef(null);
@@ -50,12 +52,12 @@ const PartnersSection = () => {
           Դառնալով Evoca ընտանիքի անդամ՝ Դուք մուտք կգործեք ժամանակակից և յուրահատուկ աշխարհ։
           Մենք մշտապես բաց ենք հետաքրքիր առաջարկների ու համագործակցությունների համար։
         </p>
-        <a
-          href="#"
-          className="inline-flex items-center gap-2 bg-[#f3ebf9] text-[#8a2be2] hover:bg-[#e5d3f7] px-6 py-3 rounded-full font-semibold text-sm transition-colors duration-300"
+        <button
+          onClick={() => navigate('/partners')}
+          className="inline-flex items-center gap-2 bg-[#f3ebf9] text-[#8a2be2] hover:bg-[#e5d3f7] px-6 py-3 rounded-full font-semibold text-sm transition-colors duration-300 cursor-pointer"
         >
           Բոլոր գործընկերները <span className="font-bold">&gt;</span>
-        </a>
+        </button>
       </div>
 
       {/* Աջ մաս՝ Swiper Slider + Պտտվող Շրջանակ + Ձեռք */}
@@ -134,11 +136,14 @@ const PartnersSection = () => {
               >
                 {partners.map((partner, index) => (
                   <SwiperSlide key={partner.id || index}>
-                    <div className="flex items-center justify-center px-4 border-r border-gray-200/80 h-16">
+                    <div 
+                      onClick={() => navigate('/partners')} // <--- Անկախ լոգոյից՝ բոլորը գնում են partners էջ
+                      className="flex items-center justify-center px-4 border-r border-gray-200/80 h-16 cursor-pointer group"
+                    >
                       <img
                         src={partner.logoUrl}
                         alt={partner.name || 'Partner Logo'}
-                        className="max-h-12 max-w-[120px] w-full object-contain opacity-85 hover:opacity-100 transition-opacity"
+                        className="max-h-12 max-w-[120px] w-full object-contain opacity-85 group-hover:opacity-100 transition-opacity"
                       />
                     </div>
                   </SwiperSlide>
@@ -158,7 +163,6 @@ const PartnersSection = () => {
         </div>
 
         {/* 3. ՁԵՌՔԻ ՆԿԱՐԸ */}
-        {/* [clip-path:inset(-120px_0px_0px_0px)] — վերևից բաց է թողնում 120px, իսկ ներքևից կտրում է ճշգրիտ քարտի եզրով */}
         <div className="absolute left-0 bottom-0 z-20 pointer-events-none flex items-end">
           <img
             src="https://www.evoca.am/img/hand.png"
