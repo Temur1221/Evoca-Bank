@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
 
-export default function TopNav() {
+export default function TopNav({ activeTab, onSelectTab }) {
   const [isApplicationsOpen, setIsApplicationsOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
-  
-  // 1. Ավելացրինք state ձախ կողմի links-ի dropdown-ի համար
   const [isTopLinksOpen, setIsTopLinksOpen] = useState(false);
 
   const topLinks = [
-    { label: 'Անհատ', active: true },
-    { label: 'Բիզնես' },
-    { label: 'Ակնթարթային վճարումներ' },
-    { label: 'Մեր մասին' },
-    { label: 'Նորություններ' },
-    { label: 'Բլոգ' },
-    { label: 'Կարիերա' },
+    { id: 'anhat', label: 'Անհատ' },
+    { id: 'biznes', label: 'Բիզնես' },
+    { id: 'akntartayin', label: 'Ակնթարթային վճարումներ' },
+    { id: 'mer-masin', label: 'Մեր մասին' },
+    { id: 'news', label: 'Նորություններ' },
+    { id: 'blog', label: 'Բլոգ' },
+    { id: 'kariera', label: 'Կարիերա' },
   ];
 
   const applicationsItems = [
@@ -34,24 +32,27 @@ export default function TopNav() {
   return (
     <div className="flex items-center justify-between px-4 sm:px-8 py-2 text-xs text-gray-700 border-b border-gray-100 relative bg-white max-[300px]:px-1 max-[300px]:text-[10px]">
       
-      {/* 1. Desktop տարբերակը (մեծ էկրաններին երևում է սովորական տեսքով) */}
+      {/* 1. Desktop տարբերակը */}
       <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 font-medium">
-        {topLinks.map((link, index) => (
-          <a
-            key={index}
-            href="#"
-            className={
-              link.active
-                ? 'text-[#6200EE] font-bold border-b-2 border-[#6200EE] pb-1'
-                : 'hover:text-[#6200EE] transition'
-            }
-          >
-            {link.label}
-          </a>
-        ))}
+        {topLinks.map((link) => {
+          const isActive = activeTab === link.id;
+          return (
+            <button
+              key={link.id}
+              onClick={() => onSelectTab(link.id)}
+              className={`cursor-pointer pb-1 transition bg-transparent border-none ${
+                isActive
+                  ? 'text-[#6200EE] font-bold border-b-2 border-[#6200EE]'
+                  : 'text-gray-700 hover:text-[#6200EE]'
+              }`}
+            >
+              {link.label}
+            </button>
+          );
+        })}
       </div>
 
-      {/* 2. Mobile/Փոքր էկրանների տարբերակը (Իկոնա, որին սեղմելիս բացվում է ցանկը) */}
+      {/* 2. Mobile/Փոքր էկրանների տարբերակը */}
       <div className="lg:hidden relative">
         <button
           onClick={() => {
@@ -61,39 +62,43 @@ export default function TopNav() {
           }}
           className="flex items-center space-x-1 p-1 text-[#6200EE] font-bold hover:bg-purple-50 rounded-lg transition focus:outline-none"
         >
-          {/* Իկոնա (3 կետ / More options) */}
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
           <span className="text-xs font-bold">Մենյու</span>
         </button>
 
-        {/* Բացվող պատուհանը (Dropdown) */}
         {isTopLinksOpen && (
           <div className="absolute left-0 mt-2 w-48 bg-white rounded-2xl shadow-2xl py-3 px-4 z-50 border border-gray-100">
             <div className="flex flex-col space-y-2">
-              {topLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className={`text-xs py-1 transition ${
-                    link.active
-                      ? 'text-[#6200EE] font-bold'
-                      : 'text-gray-700 font-medium hover:text-[#6200EE]'
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {topLinks.map((link) => {
+                const isActive = activeTab === link.id;
+                return (
+                  <button
+                    key={link.id}
+                    onClick={() => {
+                      onSelectTab(link.id);
+                      setIsTopLinksOpen(false);
+                    }}
+                    className={`text-left text-xs py-1 transition bg-transparent border-none cursor-pointer ${
+                      isActive
+                        ? 'text-[#6200EE] font-bold'
+                        : 'text-gray-700 font-medium hover:text-[#6200EE]'
+                    }`}
+                  >
+                    {link.label}
+                  </button>
+                );
+              })}
             </div>
           </div>
         )}
       </div>
 
-      {/* Ուղղակի աջ մասը (Dropdowns & Icons) */}
+      {/* Աջ մասի մնացած կոճակները (Առցանց հայտեր, Հետադարձ կապ և իկոնաներ) */}
       <div className="flex items-center space-x-2 sm:space-x-6 max-[300px]:space-x-1">
-        
         <div className="flex items-center space-x-2 sm:space-x-6 max-[300px]:space-x-1">
+          
           {/* «Առցանց հայտեր» Dropdown */}
           <div className="relative inline-block text-right">
             <button
