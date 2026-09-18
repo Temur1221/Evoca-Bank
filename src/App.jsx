@@ -25,10 +25,14 @@ import EvocainvestMainPage from "./pages/EvocainvestMainPage";
 import EvocasalaryMain from "./pages/EvocasalaryMain";
 import EvocaTouch from "./pages/EvocaTouch";
 
+// Նոր ավելացված OtherServices և BusinessMoneyTransfers էջերը
+import OtherServices from "./pages/OtherServices";
+import BusinessMoneyTransfers from "./pages/BusinessMoneyTransfers";
+
 // Տերմինալի տեղադրման հայտի էջը
 import TerminalRequestForm from "./pages/TerminalRequestForm";
 
-// Mobile POS էջը (ուղղված ճանապարհը դեպի pages պապկա)
+// Mobile POS էջը
 import MobilePOSPage from "./pages/MobilePOSPage";
 
 // Բիզնես բաժնի էջեր
@@ -64,6 +68,10 @@ export default function App() {
         <Route path="/money-transfers" element={<MoneyTransfers />} />
         <Route path="/payment-systems" element={<PaymentSystemsPage />} />
         
+        {/* Այլ ծառայությունների և Բիզնես փոխանցումների էջերի ուղիները */}
+        <Route path="/other-services" element={<OtherServices />} />
+        <Route path="/business-money-transfers" element={<BusinessMoneyTransfers />} />
+
         {/* Տերմինալի տեղադրման հայտի ուղին */}
         <Route path="/terminal-request" element={<TerminalRequestForm />} />
 

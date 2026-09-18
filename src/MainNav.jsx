@@ -26,7 +26,7 @@ export default function MainNav({ activeTab }) {
           <Link to="/biznes/securities" className="text-gray-800 hover:text-[#6200EE]">Արժեթղթերի շուկա</Link>
           <Link to="/biznes/trade" className="text-gray-800 hover:text-[#6200EE]">Առևտրի ֆինանսավորում</Link>
           <Link to="/biznes/trade/digital/v-pos" className="text-gray-800 hover:text-[#6200EE]">Դիջիթալ</Link>
-          <Link to="/biznes/other" className="text-gray-800 hover:text-[#6200EE]">Այլ</Link>
+          <Link to="/other-services" className="text-gray-800 hover:text-[#6200EE]">Այլ</Link>
         </>
       );
     } else if (activeTab === 'mer-masin') {
