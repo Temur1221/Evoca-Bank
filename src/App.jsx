@@ -24,18 +24,17 @@ import RepoMainPage from "./pages/RepoMainPage";
 import EvocainvestMainPage from "./pages/EvocainvestMainPage";
 import EvocasalaryMain from "./pages/EvocasalaryMain";
 import EvocaTouch from "./pages/EvocaTouch";
-
-// Նոր ավելացված OtherServices և BusinessMoneyTransfers էջերը
+import AboutEvoca from "./pages/AboutEvoca";
+import Structure from "./pages/Structure";
+import Management from "./pages/Management";
+import Awards from "./pages/Awards";
+import CSR from "./pages/CSR";
+import FinancialGroup from "./pages/FinancialGroup"; // <--- 1. Ավելացված է ներմուծումը
 import OtherServices from "./pages/OtherServices";
 import BusinessMoneyTransfers from "./pages/BusinessMoneyTransfers";
-
-// Տերմինալի տեղադրման հայտի էջը
+import InstantPayments from "./pages/InstantPayments";
 import TerminalRequestForm from "./pages/TerminalRequestForm";
-
-// Mobile POS էջը
 import MobilePOSPage from "./pages/MobilePOSPage";
-
-// Բիզնես բաժնի էջեր
 import BusinessLoans from "./pages/BusinessLoans";
 import BusinessLeasing from "./pages/BusinessLeasing";
 import BusinessLeasingSpecial from "./pages/BusinessLeasingSpecial";
@@ -50,6 +49,7 @@ import BusinessInkasso from "./pages/BusinessInkasso";
 import BusinessVPos from "./pages/BusinessVPos";
 import BusinessPos from "./pages/BusinessPos"; 
 import BusinessTariffs from "./pages/BusinessTariffs";
+import Shareholders from "./pages/Shareholders";
 
 export default function App() {
   return (
@@ -67,7 +67,19 @@ export default function App() {
         <Route path="/safe-deposit-boxes" element={<SafeDepositBoxes />} />
         <Route path="/money-transfers" element={<MoneyTransfers />} />
         <Route path="/payment-systems" element={<PaymentSystemsPage />} />
+        <Route path="/mer-masin/shareholders" element={<Shareholders />} />
         
+        {/* Evoca-ի մասին և ենթաէջերի ուղիները */}
+        <Route path="/mer-masin/about" element={<AboutEvoca />} />
+        <Route path="/mer-masin/structure" element={<Structure />} />
+        <Route path="/mer-masin/management" element={<Management />} />
+        <Route path="/mer-masin/awards" element={<Awards />} />
+        <Route path="/mer-masin/csr" element={<CSR />} />
+        <Route path="/mer-masin/financial-group" element={<FinancialGroup />} /> {/* <--- 2. Ավելացված է ռոութը */}
+        
+        {/* Ակնթարթային վճարումների ուղին */}
+        <Route path="/instant-payments" element={<InstantPayments />} />
+
         {/* Այլ ծառայությունների և Բիզնես փոխանցումների էջերի ուղիները */}
         <Route path="/other-services" element={<OtherServices />} />
         <Route path="/business-money-transfers" element={<BusinessMoneyTransfers />} />
