@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function TopNav({ activeTab, onSelectTab }) {
+  const navigate = useNavigate();
   const [isApplicationsOpen, setIsApplicationsOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isTopLinksOpen, setIsTopLinksOpen] = useState(false);
@@ -29,6 +31,14 @@ export default function TopNav({ activeTab, onSelectTab }) {
     '8444',
   ];
 
+  const handleLinkClick = (linkId) => {
+    if (linkId === 'akntartayin') {
+      navigate('/instant-payments');
+    } else {
+      onSelectTab(linkId);
+    }
+  };
+
   return (
     <div className="flex items-center justify-between px-4 sm:px-8 py-2 text-xs text-gray-700 border-b border-gray-100 relative bg-white max-[300px]:px-1 max-[300px]:text-[10px]">
       
@@ -39,7 +49,7 @@ export default function TopNav({ activeTab, onSelectTab }) {
           return (
             <button
               key={link.id}
-              onClick={() => onSelectTab(link.id)}
+              onClick={() => handleLinkClick(link.id)}
               className={`cursor-pointer pb-1 transition bg-transparent border-none ${
                 isActive
                   ? 'text-[#6200EE] font-bold border-b-2 border-[#6200EE]'
@@ -77,7 +87,7 @@ export default function TopNav({ activeTab, onSelectTab }) {
                   <button
                     key={link.id}
                     onClick={() => {
-                      onSelectTab(link.id);
+                      handleLinkClick(link.id);
                       setIsTopLinksOpen(false);
                     }}
                     className={`text-left text-xs py-1 transition bg-transparent border-none cursor-pointer ${
@@ -95,7 +105,7 @@ export default function TopNav({ activeTab, onSelectTab }) {
         )}
       </div>
 
-      {/* Աջ մասի մնացած կոճակները (Առցանց հայտեր, Հետադարձ կապ և իկոնաներ) */}
+      {/* Աջ մասի մնացած կոճակները */}
       <div className="flex items-center space-x-2 sm:space-x-6 max-[300px]:space-x-1">
         <div className="flex items-center space-x-2 sm:space-x-6 max-[300px]:space-x-1">
           
