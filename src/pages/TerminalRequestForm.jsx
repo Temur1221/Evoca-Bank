@@ -3,6 +3,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import BusinessDigitalSubHeader from '../BusinessDigitalSubHeader';
 import TerminalApplicationForm from '../TerminalApplicationForm';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function TerminalRequestForm() {
   return (
@@ -10,6 +11,7 @@ export default function TerminalRequestForm() {
       <Header />
       <BusinessDigitalSubHeader />
       <TerminalApplicationForm/>
+      <FloatingChatWidget/>
       <Footer />
     </>
   );
