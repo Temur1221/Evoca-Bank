@@ -5,6 +5,7 @@ import CapitalNewsSection from '../CapitalNewsSection'
 import FactoringContent from '../FactoringContent'
 import FactoringDocuments from '../FactoringDocuments'
 import BusinessTradeSubHeader from '../BusinessTradeSubHeader'
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function BusinessFactoring() {
   return (
@@ -14,6 +15,7 @@ export default function BusinessFactoring() {
     <FactoringContent/>
     <FactoringDocuments/>
     <CapitalNewsSection/>
+    <FloatingChatWidget/>
     <Footer/>
     </>
   )
