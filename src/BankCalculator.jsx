@@ -1,26 +1,18 @@
 import React, { useState } from 'react';
 
 export default function BankCalculator() {
-  const [activeTab, setActiveTab] = useState('loan'); // 'loan' or 'deposit'
-
-  // --- LOAN STATE ---
+  const [activeTab, setActiveTab] = useState('loan');
   const [loanAmount, setLoanAmount] = useState(1000000);
   const [loanRate, setLoanRate] = useState(1);
   const [loanTerm, setLoanTerm] = useState(48);
-  const [repayType, setRepayType] = useState('diff'); // 'diff' (Զսպանակաձև) or 'annuity' (Անուիտետ)
+  const [repayType, setRepayType] = useState('diff');
   const [showLoanModal, setShowLoanModal] = useState(false);
-
-  // --- DEPOSIT STATE ---
   const [depAmount, setDepAmount] = useState(1000000);
   const [depRate, setDepRate] = useState(1);
   const [depDays, setDepDays] = useState(91);
-
-  // --- DEPOSIT CALCULATIONS ---
   const dailyInterest = (depAmount * (depRate / 100)) / 365;
   const grossInterest = dailyInterest * depDays;
-  const netInterest = grossInterest * 0.9; // 10% tax deduction
-
-  // --- LOAN CALCULATIONS ---
+  const netInterest = grossInterest * 0.9;
   const calculateLoanSchedule = () => {
     const monthlyRate = loanRate / 100 / 12;
     let balance = loanAmount;
@@ -49,7 +41,6 @@ export default function BankCalculator() {
         schedule.push({ month: i, interest, principal, monthlyPayment });
       }
     } else {
-      // Differentiated / Զսպանակաձև
       for (let i = 1; i <= loanTerm; i++) {
         const interest = balance * monthlyRate;
         const principal = fixedPrincipal;
@@ -73,8 +64,6 @@ export default function BankCalculator() {
     <div className="min-h-screen bg-slate-100 p-6 flex justify-center items-start font-sans">
       <div className="bg-white rounded-3xl p-8 max-w-4xl w-full shadow-lg mt-4">
         <h1 className="text-3xl text-slate-800 mb-8 text-serif">Հաշվիչներ</h1>
-
-        {/* TAB BUTTONS */}
         <div className="flex gap-4 mb-8">
           <button
             className={`px-8 py-2.5 rounded-xl font-bold transition-all ${
@@ -97,12 +86,9 @@ export default function BankCalculator() {
             Ավանդ
           </button>
         </div>
-
-        {/* LOAN CALCULATOR TAB */}
         {activeTab === 'loan' && (
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Row 1 Left: Վարկի գումար */}
               <div>
                 <div className="border border-slate-200 rounded-2xl p-4 flex justify-between items-center relative bg-white">
                   <span className="font-bold text-slate-700 text-sm">Վարկի գումար</span>
@@ -118,8 +104,6 @@ export default function BankCalculator() {
                   <span>50000000</span>
                 </div>
               </div>
-
-              {/* Row 1 Right: Ժամկետ */}
               <div>
                 <div className="border border-slate-200 rounded-2xl p-4 flex justify-between items-center relative bg-white">
                   <span className="font-bold text-slate-700 text-sm">Ժամկետ</span>
@@ -138,8 +122,6 @@ export default function BankCalculator() {
                   <span>1200 ամիս</span>
                 </div>
               </div>
-
-              {/* Row 2 Left: Տարեկան տոկոսադրույք */}
               <div>
                 <div className="border border-slate-200 rounded-2xl p-4 flex justify-between items-center relative bg-white">
                   <span className="font-bold text-slate-700 text-sm">Տարեկան տոկոսադրույք</span>
@@ -159,8 +141,6 @@ export default function BankCalculator() {
                   <span>36 %</span>
                 </div>
               </div>
-
-              {/* Row 2 Right: Մարման ձև */}
               <div className="flex flex-col justify-center">
                 <span className="text-xs text-slate-400 mb-2 font-medium">Մարման ձև</span>
                 <div className="flex gap-8 items-center">
@@ -190,7 +170,6 @@ export default function BankCalculator() {
               </div>
             </div>
 
-            {/* Bottom Row */}
             <div className="flex flex-col md:flex-row justify-between items-center pt-6 gap-4">
               <p className="text-xs text-slate-500 font-medium">
                 Բոլոր հաշվարկները կրում են մոտավոր բնույթ և չեն հանդիսանում հրապարակային առաջարկ:
@@ -204,8 +183,6 @@ export default function BankCalculator() {
             </div>
           </div>
         )}
-
-        {/* DEPOSIT CALCULATOR TAB */}
         {activeTab === 'deposit' && (
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -308,8 +285,6 @@ export default function BankCalculator() {
           </div>
         )}
       </div>
-
-      {/* LOAN RESULTS MODAL */}
       {showLoanModal && (
         <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 p-4">
           <div className="bg-white p-8 rounded-3xl max-w-4xl w-full max-h-[85vh] overflow-y-auto relative shadow-2xl">
