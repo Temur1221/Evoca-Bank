@@ -7,6 +7,7 @@ import SecuritiesSubNav from '../SecuritiesSubNav';
 import HkdHeroSection from '../HkdHeroSection';
 import HkdDetailsList from '../HkdDetailsList';
 import HkdContent from '../HkdContent';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 
 export default function HkdMainPage() {
@@ -17,13 +18,10 @@ export default function HkdMainPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // 1. Քաշում ենք Հերո բլոկի տվյալները 'hkdHero' հավաքածուից
         const heroSnapshot = await getDocs(collection(db, 'hkdHero'));
         if (!heroSnapshot.empty) {
           setHeroData(heroSnapshot.docs[0].data());
         }
-
-        // 2. Քաշում ենք ստորին մանրամասներն ու հղումները 'hkdDetails' հավաքածուից
         const detailsSnapshot = await getDocs(collection(db, 'hkdDetails'));
         const items = detailsSnapshot.docs.map((doc) => ({
           id: doc.id,
@@ -53,15 +51,13 @@ export default function HkdMainPage() {
         
         <div className="py-12 px-4 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto space-y-12">
-            {/* Հերո բլոկ, որն ստանում է տվյալները firebase-ից */}
             <HkdHeroSection data={heroData} />
-            
-            {/* Մանրամասների ցանկը, որն ստանում է զանգվածը */}
             <HkdDetailsList detailsData={detailsData} />
           </div>
         </div>
       </div>
       <HkdContent/>
+      <FloatingChatWidget/>
       <Footer />
     </div>
   );
