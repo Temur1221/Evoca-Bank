@@ -10,8 +10,7 @@ export default function Footer() {
           {/* 1. Լոգո և հասցե */}
           <div className="flex flex-col space-y-4">
             <div className="flex items-center space-x-1">
-              <span className="text-2xl font-extrabold tracking-tight text-[#2C2C2C]">evoca</span>
-              <span className="text-2xl font-extrabold tracking-tight text-[#5200FF]">BANK</span>
+                <img src="https://payments.evoca.am/assets/images/logo.png" alt="" />
             </div>
 
             <div className="text-xs text-gray-600 leading-relaxed pt-2">
