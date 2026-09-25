@@ -4,6 +4,7 @@ import Footer from "../Footer";
 import Header from "../Header";
 import SafeDepositBoxesInfo from "../SafeDepositBoxesInfo";
 import AccountSubNav from "../AccountSubNav";
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function SafeDepositBoxes() {
   return (
@@ -14,6 +15,7 @@ export default function SafeDepositBoxes() {
       <SafeDepositBoxesHero />
       <SafeDepositBoxesInfo/>
     </div>
+    <FloatingChatWidget/>
     <Footer/>
     </>
 );
