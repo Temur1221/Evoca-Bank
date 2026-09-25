@@ -3,6 +3,7 @@ import Header from '../Header';
 import AboutSubHeader from '../AboutSubHeader';
 import Footer from '../Footer';
 import ManagementSection from '../ManagementSection';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function Management() {
   return (
@@ -14,6 +15,7 @@ export default function Management() {
           <ManagementSection />
         </div>
       </main>
+      <FloatingChatWidget/>
       <Footer/>
     </>
   )
