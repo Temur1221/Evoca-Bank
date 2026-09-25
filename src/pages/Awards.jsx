@@ -3,6 +3,7 @@ import Header from '../Header';
 import AboutSubHeader from '../AboutSubHeader';
 import Footer from '../Footer';
 import AwardsSection from '../AwardsSection';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function Awards() {
   return (
@@ -15,7 +16,7 @@ export default function Awards() {
           <AwardsSection />
         </div>
       </main>
-
+      <FloatingChatWidget/>
       <Footer />
     </div>
   );
