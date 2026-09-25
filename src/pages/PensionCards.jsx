@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import EvocaBanner from "../EvocaBanner";
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function PensionCards() {
   return (
@@ -9,9 +10,7 @@ export default function PensionCards() {
       <Header />
       
       <div className="max-w-[1280px] mx-auto px-4 py-12 font-sans bg-white min-h-[60vh]">
-        
-        {/* Վերին բլոկ՝ նկար և առաջին նկարագրություն */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 shadow-sm rounded-2xl overflow-hidden border border-gray-100 mb-12">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 shadow-sm rounded-2xl overflow-hidden border border-gray-100 mb-12">
           <div className="bg-[#F8F9FA] p-8 md:p-12 flex flex-col justify-center">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
               Սոցիալական ապահովության վճարային քարտեր
@@ -29,8 +28,6 @@ export default function PensionCards() {
             />
           </div>
         </div>
-
-        {/* Լրացուցիչ պայմաններ և տեքստեր */}
         <div className="space-y-6 text-gray-700 text-base leading-relaxed mb-12">
           <p>
             Քարտերը տրամադրում և սպասարկում ենք մեր կողմից հաստատված Կենսաթոշակային քարտերի տրամադրման և սպասարկման սակագների համաձայն:
@@ -45,8 +42,6 @@ export default function PensionCards() {
             <strong>Ծանոթագրություն</strong> - «Կենսաթոշակառու»՝ անձ, ում կենսաթոշակը վճարվում է անկանխիկ եղանակով։ Բանկում բացված բանկային հաշվին փոխանցվող միջոցները՝ կենսաթոշակի, պատվովճարի, դրամական օգնության և սոցիալական ապահովության այլ ծրագրերով նախատեսված դրամական վճարների գումարն են:
           </p>
         </div>
-
-        {/* Վճարային քարտերով կատարվող գործառնություններ */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Վճարային քարտերով կատարվող գործառնություններ</h2>
           <p className="text-gray-700 font-medium mb-4">Վճարային քարտերով կարող եք՝</p>
@@ -62,8 +57,6 @@ export default function PensionCards() {
             <u>Նշում․</u> Քարտային հաշվով կատարվող դրամական շարժը վերահսկելու նպատակով ակտիվացնում ենք SMS-տեղեկացման ծառայությունը (որը կարող եք ոչ հիմքում գրել և հրաժարվել SMS տեղեկացումների ծառայությունից)։ Օնլայն վճարումներ իրականացնելիս կարող եք օգտվել 3D Secure ծառայությունից։
           </p>
         </div>
-
-        {/* Օգտակար տեղեկատվություն */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Օգտակար տեղեկատվություն</h2>
           <p className="text-gray-700 font-medium mb-4">Քարտային վճարումներ կատարելիս անհրաժեշտ է հիշել՝</p>
@@ -73,8 +66,6 @@ export default function PensionCards() {
             <li>Քարտով վճարելիս միշտ պահեք քարտը ձեր տեսադաշտում։</li>
           </ul>
         </div>
-
-        {/* Զգուշացում */}
         <div className="mb-12 bg-purple-50 p-6 rounded-2xl border border-purple-100">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Զգուշացում</h2>
           <ul className="list-disc pl-5 space-y-3 text-gray-700">
@@ -83,8 +74,6 @@ export default function PensionCards() {
             <li>Մենք պատասխանատվություն չենք կրում մեզ հասցրած այն վնասի համար, որը կատարվել է քարտը կորցնելու և մեզ հայտնելու միջև ընկած ժամանակահատվածում։</li>
           </ul>
         </div>
-
-        {/* Փաստաթղթեր */}
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Փաստաթղթեր</h2>
           <div className="space-y-3">
@@ -111,6 +100,7 @@ export default function PensionCards() {
 
       </div>
       <EvocaBanner/>
+      <FloatingChatWidget/>
       <Footer />
     </>
   );
