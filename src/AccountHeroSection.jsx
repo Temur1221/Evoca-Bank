@@ -31,7 +31,6 @@ export default function AccountHeroSection() {
 
   return (
     <section className="mb-12 max-w-7xl mx-auto px-4 space-y-6">
-      {/* Հիմնական վերին բլոկը (նկարով և գլխավոր տեքստով) */}
       <div className="bg-[#f4f4f4] border-purple-100 rounded-3xl p-6 md:p-12 shadow-sm">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
@@ -66,7 +65,6 @@ export default function AccountHeroSection() {
         </div>
       </div>
 
-      {/* Ներքևի պայմանների բլոկը՝ առանձին դիվով հիմնականի տակ */}
       <div className="bg-white border border-purple-100 rounded-3xl p-6 md:p-8 shadow-sm text-xs md:text-sm text-gray-500 leading-relaxed">
         <p>
           {data?.termsText || (
