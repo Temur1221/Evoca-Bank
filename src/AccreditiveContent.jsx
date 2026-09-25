@@ -3,9 +3,7 @@ import React from 'react';
 export default function AccreditiveContent() {
   return (
     <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 space-y-8 text-gray-800">
-      
-      {/* Վերնագիր և նկարագրություն */}
-      <div className="space-y-4">
+            <div className="space-y-4">
         <h1 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
           Ակրեդիտիվ
         </h1>
@@ -17,7 +15,6 @@ export default function AccreditiveContent() {
         </p>
       </div>
 
-      {/* Ակրեդիտիվի թողարկման հիմնական պայմանները */}
       <div className="space-y-3 pt-2">
         <h3 className="text-lg sm:text-xl font-bold text-gray-900">
           Ակրեդիտիվի թողարկման հիմնական պայմանները՝
@@ -38,7 +35,6 @@ export default function AccreditiveContent() {
         </p>
       </div>
 
-      {/* Սակագներ */}
       <div className="space-y-4 pt-4">
         <h3 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">
           Սակագներ
@@ -49,49 +45,40 @@ export default function AccreditiveContent() {
             <table className="w-full text-left border-collapse">
               <tbody>
                 
-                {/* 1 */}
                 <tr className="border-b border-purple-50/60">
                   <td className="py-3 px-4 text-xs sm:text-sm font-medium text-gray-700 w-7/12">- նախնական ծանուցում</td>
                   <td className="py-3 px-4 text-xs sm:text-sm font-semibold text-gray-900 w-5/12 text-right">50,000 դրամ</td>
                 </tr>
 
-                {/* 2 */}
                 <tr className="border-b border-purple-50/60">
                   <td className="py-3 px-4 text-xs sm:text-sm font-medium text-gray-700">- ծանուցում</td>
                   <td className="py-3 px-4 text-xs sm:text-sm font-semibold text-gray-900 text-right">0,15% նվազ.՝ 50,000 դրամ</td>
                 </tr>
 
-                {/* 3 */}
                 <tr className="border-b border-purple-50/60">
                   <td className="py-3 px-4 text-xs sm:text-sm font-medium text-gray-700">- բացում</td>
                   <td className="py-3 px-4 text-xs sm:text-sm font-semibold text-gray-900 text-right">0,15% նվազ.՝ 50,000 դրամ</td>
                 </tr>
-
-                {/* 4 */}
                 <tr className="border-b border-purple-50/60">
                   <td className="py-3 px-4 text-xs sm:text-sm font-medium text-gray-700">- հաստատում</td>
                   <td className="py-3 px-4 text-xs sm:text-sm font-semibold text-gray-900 text-right">0,15% նվազ.՝ 50,000 դրամ</td>
                 </tr>
 
-                {/* 5 */}
                 <tr className="border-b border-purple-50/60">
                   <td className="py-3 px-4 text-xs sm:text-sm font-medium text-gray-700">- վճարում կամ նեգոցիացիա</td>
                   <td className="py-3 px-4 text-xs sm:text-sm font-semibold text-gray-900 text-right">0,15% նվազ.՝ 50,000 դրամ</td>
                 </tr>
 
-                {/* 6 */}
                 <tr className="border-b border-purple-50/60">
                   <td className="py-3 px-4 text-xs sm:text-sm font-medium text-gray-700">- փաստաթղթերի ընդունում, ստուգում, առաքում</td>
                   <td className="py-3 px-4 text-xs sm:text-sm font-semibold text-gray-900 text-right">0,15% նվազ.՝ 50,000 դրամ</td>
                 </tr>
 
-                {/* 7 */}
                 <tr className="border-b border-purple-50/60">
                   <td className="py-3 px-4 text-xs sm:text-sm font-medium text-gray-700">- պայմանների փոփոխություն</td>
                   <td className="py-3 px-4 text-xs sm:text-sm font-semibold text-gray-900 text-right">50,000 դրամ</td>
                 </tr>
 
-                {/* 8 */}
                 <tr>
                   <td className="py-3 px-4 text-xs sm:text-sm font-medium text-gray-700">- չեղյալ համարում</td>
                   <td className="py-3 px-4 text-xs sm:text-sm font-semibold text-gray-900 text-right">0,15% նվազ.՝ 50,000 դրամ</td>
@@ -102,7 +89,6 @@ export default function AccreditiveContent() {
           </div>
         </div>
 
-        {/* Նշում */}
         <p className="text-xs sm:text-sm text-gray-600 pt-2">
           <span className="font-bold text-gray-900">Նշում</span> - Այս դրույթներով և սակագներով սահմանված վճարներից բացի՝ գանձում ենք մեր փաստացի կատարած ծախսերի գումարը։
         </p>
