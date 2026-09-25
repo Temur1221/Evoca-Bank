@@ -8,6 +8,7 @@ import Header from "../Header";
 import AccountSubNav from "../AccountSubNav";
 import EvocaBanner from "../EvocaBanner";
 import MetalDocuments from "../MetalDocuments";
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function MetalAccountsIntro() {
   const [metalData, setMetalData] = useState(null);
@@ -48,6 +49,7 @@ export default function MetalAccountsIntro() {
         <MetalDocuments />
       </div>
       <EvocaBanner />
+      <FloatingChatWidget/>
       <Footer />
     </>
   );
