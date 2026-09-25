@@ -5,6 +5,7 @@ import SecuritiesSubNav from '../SecuritiesSubNav';
 import BondsHeroSection from '../BondsHeroSection'; // Վերցնում ենք src-ից
 import BondsInfoSection from '../BondsInfoSection';
 import BondsAccordionSection from '../BondsAccordionSection';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function BondsSection() {
   return (
@@ -16,6 +17,7 @@ export default function BondsSection() {
         <BondsInfoSection/>
         <BondsAccordionSection/>
       </div>
+      <FloatingChatWidget/>
       <Footer />
     </div>
   );
