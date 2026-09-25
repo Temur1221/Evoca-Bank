@@ -5,6 +5,7 @@ import AboutSubHeader from '../AboutSubHeader'
 import CSRHero from '../CSRHero'
 import CapitalNewsSection from '../CapitalNewsSection'
 import CSRDescription from '../CSRDescription'
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function CSR() {
   return (
@@ -14,6 +15,7 @@ export default function CSR() {
         <CSRHero/>
         <CSRDescription/>
         <CapitalNewsSection/>
+        <FloatingChatWidget/>
         <Footer/>
     </>
 )
