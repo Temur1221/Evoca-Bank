@@ -3,6 +3,7 @@ import Header from '../Header'
 import Footer from '../Footer'
 import AboutSubHeader from '../AboutSubHeader'
 import FinancialGroupSection from '../FinancialGroupSection'
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function FinancialGroup() {
   return (
@@ -10,6 +11,7 @@ export default function FinancialGroup() {
         <Header/>
         <AboutSubHeader/>
         <FinancialGroupSection/>
+        <FloatingChatWidget/>
         <Footer/>
     </>
 )
