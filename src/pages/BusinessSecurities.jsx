@@ -4,6 +4,7 @@ import Footer from '../Footer';
 import BusinessSecuritiesInvestment from '../BusinessSecuritiesInvestment';
 import InvestmentAccordion from '../InvestmentAccordion';
 import BusinessSecuritiesSubHeader from '../BusinessSecuritiesSubHeader';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function BusinessSecurities() {
   return (
@@ -12,6 +13,7 @@ export default function BusinessSecurities() {
     <BusinessSecuritiesSubHeader/>
     <BusinessSecuritiesInvestment/>
     <InvestmentAccordion />
+    <FloatingChatWidget/>
     <Footer />
     </>
 )
