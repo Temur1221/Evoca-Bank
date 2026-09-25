@@ -3,6 +3,7 @@ import Header from '../Header'
 import AboutSubHeader from '../AboutSubHeader'
 import Footer from '../Footer'
 import BankStructure from '../BankStructure'
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function Structure() {
   return (
@@ -10,6 +11,7 @@ export default function Structure() {
       <Header/>
       <AboutSubHeader/>
       <BankStructure/>
+      <FloatingChatWidget/>
       <Footer/>
     </>
 )
