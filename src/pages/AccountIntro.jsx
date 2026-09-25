@@ -7,6 +7,7 @@ import AccountDocuments from '../AccountDocuments';
 import AccountAccordionSection from '../AccountAccordionSection';
 import EvocaBanner from '../EvocaBanner';
 import AccountSubNav from '../AccountSubNav';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function AccountIntro() {
   return (
@@ -18,6 +19,7 @@ export default function AccountIntro() {
       <AccountAccordionSection/>
       <AccountDocuments/>
       <EvocaBanner/>
+      <FloatingChatWidget/>
       <Footer />
     </>
   );
