@@ -31,11 +31,15 @@ export default function TopNav({ activeTab, onSelectTab }) {
     '8444',
   ];
 
-  const handleLinkClick = (linkId) => {
+const handleLinkClick = (linkId) => {
     if (linkId === 'akntartayin') {
       navigate('/instant-payments');
+    } else if (linkId === 'news') {
+      navigate('/mer-masin/news');
+    } else if (linkId === 'blog') {
+      navigate('/blog');
     } else {
-      onSelectTab(linkId);
+      onSelectTab(linkId); // Սա կաշխատի 'kariera'-ի և մյուսների համար
     }
   };
 
