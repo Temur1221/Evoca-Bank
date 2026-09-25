@@ -5,6 +5,7 @@ import SafeDepositBoxesInfo from "../SafeDepositBoxesInfo";
 import SafeDepositBoxesHero from "../SafeDepositBoxesHero";
 import EvocaBanner from '../EvocaBanner';
 import OtherSubHeader from '../OtherSubHeader';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function OtherServices() {
   return (
@@ -14,6 +15,7 @@ export default function OtherServices() {
       <SafeDepositBoxesHero/>
       <SafeDepositBoxesInfo />
       <EvocaBanner/>
+      <FloatingChatWidget/>
       <Footer/>
     </>
 )
