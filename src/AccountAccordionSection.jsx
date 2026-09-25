@@ -10,13 +10,11 @@ export default function AccountAccordionSection() {
   useEffect(() => {
     const fetchAccordionItems = async () => {
       try {
-        // Վերցնում ենք accounts հավաքածուի բոլոր փաստաթղթերը
         const querySnapshot = await getDocs(collection(db, 'accounts'));
         const fetchedItems = [];
         
         querySnapshot.forEach((doc) => {
           const data = doc.data();
-          // Եթե փաստաթուղթը ունի title և content դաշտեր, ավելացնում ենք ցանկին
           if (data.title && data.content) {
             fetchedItems.push({ id: doc.id, ...data });
           }
