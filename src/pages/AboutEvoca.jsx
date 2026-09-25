@@ -5,6 +5,7 @@ import AboutSubHeader from '../AboutSubHeader'
 import AboutGeneral from '../AboutGeneral'
 import CorporateSocialResponsibility from '../CorporateSocialResponsibility'
 import BankBrandIdentity from '../BankBrandIdentity'
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function AboutEvoca() {
   return (
@@ -14,6 +15,7 @@ export default function AboutEvoca() {
         <AboutGeneral/>
         <CorporateSocialResponsibility/>
         <BankBrandIdentity/>
+        <FloatingChatWidget/>
         <Footer/>
     </>
   )
