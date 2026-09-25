@@ -6,6 +6,7 @@ import DepositTermsSection from '../DepositTermsSection'
 import DepositRatesAndTermsSection from '../DepositRatesAndTermsSection'
 import FatcaNoticeSection from '../FatcaNoticeSection'
 import EvocaBanner from '../EvocaBanner';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function BusinessAccounts() {
   return (
@@ -16,6 +17,7 @@ export default function BusinessAccounts() {
       <DepositRatesAndTermsSection/>
       <FatcaNoticeSection/>
       <EvocaBanner/>
+      <FloatingChatWidget/>
       <Footer/>
     </>
 
