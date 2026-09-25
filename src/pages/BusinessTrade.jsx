@@ -5,6 +5,7 @@ import BusinessTradeSubHeader from '../BusinessTradeSubHeader';
 import CapitalNewsSection from '../CapitalNewsSection';
 import BusinessTradeGuarantee from '../BusinessTradeGuarantee';
 import BusinessTradeAccordion from '../BusinessTradeAccordion';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function BusinessTrade() {
   const [activeTab] = useState('biznes');
@@ -16,6 +17,7 @@ export default function BusinessTrade() {
         <BusinessTradeGuarantee/>
         <BusinessTradeAccordion/>
         <CapitalNewsSection/>
+        <FloatingChatWidget/>
         <Footer/>
     </>
   );
