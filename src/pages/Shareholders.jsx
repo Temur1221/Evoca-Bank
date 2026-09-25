@@ -5,6 +5,7 @@ import Footer from '../Footer';
 import ShareholderCard from '../ShareholderCard';
 import NecessaryInfoSection from '../NecessaryInfoSection';
 import DocumentsSection from '../DocumentsSection';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function Shareholders() {
   return (
@@ -23,6 +24,7 @@ export default function Shareholders() {
       <NecessaryInfoSection/>
       <DocumentsSection/>
       </main>
+      <FloatingChatWidget/>
       <Footer />
     </div>
   );
