@@ -3,6 +3,7 @@ import { db } from '../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import Header from '../Header';
 import Footer from '../Footer';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 const Partners = () => {
   const [partners, setPartners] = useState([]);
@@ -102,6 +103,7 @@ const Partners = () => {
         </>
       )}
     </div>
+    <FloatingChatWidget/>
     <Footer/>
     </>
   );
