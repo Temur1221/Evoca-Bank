@@ -6,6 +6,7 @@ import Footer from '../Footer';
 import SecuritiesSubNav from '../SecuritiesSubNav';
 import RepoHeroSection from '../RepoHeroSection';
 import RepoDetailsList from '../RepoDetailsList';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function RepoMainPage() {
   const [heroData, setHeroData] = useState(null);
@@ -56,7 +57,7 @@ export default function RepoMainPage() {
           </div>
         </div>
       </div>
-
+      <FloatingChatWidget/>
       <Footer />
     </div>
   );
