@@ -29,7 +29,9 @@ import Structure from "./pages/Structure";
 import Management from "./pages/Management";
 import Awards from "./pages/Awards";
 import CSR from "./pages/CSR";
-import FinancialGroup from "./pages/FinancialGroup"; // <--- 1. Ավելացված է ներմուծումը
+import AnnualReportsPage from "./pages/AnnualReportsPage";
+import SemiannualPage from "./pages/SemiannualPage";
+import FinancialGroup from "./pages/FinancialGroup";
 import OtherServices from "./pages/OtherServices";
 import BusinessMoneyTransfers from "./pages/BusinessMoneyTransfers";
 import InstantPayments from "./pages/InstantPayments";
@@ -44,12 +46,30 @@ import BusinessMetalAccounts from "./pages/BusinessMetalAccounts";
 import BusinessSecurities from "./pages/BusinessSecurities";
 import BusinessTrade from "./pages/BusinessTrade"; 
 import BusinessFactoring from "./pages/BusinessFactoring"; 
-import AccreditiveContent from "./pages/AccreditiveContent";
+import AccreditiveContent from "./pages/BusinessAccreditive";
 import BusinessInkasso from "./pages/BusinessInkasso";
 import BusinessVPos from "./pages/BusinessVPos";
 import BusinessPos from "./pages/BusinessPos"; 
 import BusinessTariffs from "./pages/BusinessTariffs";
 import Shareholders from "./pages/Shareholders";
+import HashvetvutyunnerPage from "./pages/HashvetvutyunnerPage";
+import AuditPage from "./pages/AuditPage"; 
+import FinancialReportsPage from "./pages/FinancialReportsPage";
+import InvestorsReportsPage from "./pages/InvestorsReportsPage";
+import AnnouncementsPage from './pages/AnnouncementsPage';
+import NewsPage from './pages/NewsPage';
+import BlogPage from "./pages/BlogPage";
+import Login from "./pages/Login";
+import CareerPage from "./pages/CareerPage";
+import EvocaLifePage from './pages/EvocaLifePage';
+import CulturePage from './pages/CulturePage';
+import Advantages from './pages/Advantages';
+import FAQPage from './pages/FAQPage';
+import HowToApply from './pages/HowToApply';
+import Jobs from './pages/Jobs';
+import JobOpportunities from './pages/JobOpportunities';
+import Internship from './pages/Internship';
+import EvocaBridge from './pages/EvocaBridge'; // Ներմուծում ենք EvocaBridge բաղադրիչը
 
 export default function App() {
   return (
@@ -68,34 +88,27 @@ export default function App() {
         <Route path="/money-transfers" element={<MoneyTransfers />} />
         <Route path="/payment-systems" element={<PaymentSystemsPage />} />
         <Route path="/mer-masin/shareholders" element={<Shareholders />} />
-        
-        {/* Evoca-ի մասին և ենթաէջերի ուղիները */}
         <Route path="/mer-masin/about" element={<AboutEvoca />} />
         <Route path="/mer-masin/structure" element={<Structure />} />
         <Route path="/mer-masin/management" element={<Management />} />
         <Route path="/mer-masin/awards" element={<Awards />} />
         <Route path="/mer-masin/csr" element={<CSR />} />
-        <Route path="/mer-masin/financial-group" element={<FinancialGroup />} /> {/* <--- 2. Ավելացված է ռոութը */}
-        
-        {/* Ակնթարթային վճարումների ուղին */}
+        <Route path="/mer-masin/financial-group" element={<FinancialGroup />} />
+        <Route path="/mer-masin/reports" element={<Navigate to="/mer-masin/reports/audit" replace />} />
+        <Route path="/mer-masin/reports/main" element={<HashvetvutyunnerPage />} />
+        <Route path="/mer-masin/reports/audit" element={<AuditPage />} />
+        <Route path="/mer-masin/reports/financial" element={<FinancialReportsPage />} />
+        <Route path="/mer-masin/reports/investors" element={<InvestorsReportsPage />} />
         <Route path="/instant-payments" element={<InstantPayments />} />
-
-        {/* Այլ ծառայությունների և Բիզնես փոխանցումների էջերի ուղիները */}
         <Route path="/other-services" element={<OtherServices />} />
         <Route path="/business-money-transfers" element={<BusinessMoneyTransfers />} />
-
-        {/* Տերմինալի տեղադրման հայտի ուղին */}
         <Route path="/terminal-request" element={<TerminalRequestForm />} />
-
-        {/* Արժեթղթերի էջերը */}
         <Route path="/securities" element={<SecuritiesPage />} />
         <Route path="/securities/services" element={<SecuritiesPage />} />
         <Route path="/securities/bonds" element={<BondsSection />} />
         <Route path="/securities/hcd" element={<HkdMainPage />} />
         <Route path="/securities/repo" element={<RepoMainPage />} />
         <Route path="/securities/evocainvest" element={<EvocainvestMainPage />} />
-
-        {/* Բիզնես բաժնի էջերը */}
         <Route path="/biznes/loans" element={<BusinessLoans />} />
         <Route path="/biznes/leasing" element={<BusinessLeasing />} />
         <Route path="/biznes/leasing/special" element={<BusinessLeasingSpecial />} />
@@ -103,34 +116,38 @@ export default function App() {
         <Route path="/biznes/deposits" element={<BusinessDeposits />} />
         <Route path="/biznes/metal-accounts" element={<BusinessMetalAccounts />} />
         <Route path="/biznes/securities" element={<BusinessSecurities />} />
-        
-        {/* Առևտրի ֆինանսավորման և ֆակտորինգի էջերը */}
         <Route path="/biznes/trade" element={<BusinessTrade />} />
         <Route path="/biznes/factoring" element={<BusinessFactoring />} />
         <Route path="/biznes/trade/letter-of-credit" element={<AccreditiveContent />} />
         <Route path="/biznes/trade/inkasso" element={<BusinessInkasso />} />
-        
-        {/* Դիջիթալ բաժնի ենթաէջեր */}
         <Route path="/biznes/trade/digital/v-pos" element={<BusinessVPos />} />
         <Route path="/biznes/trade/digital/pos" element={<BusinessPos />} />
         <Route path="/biznes/trade/digital/tariffs" element={<BusinessTariffs />} />
-        
-        {/* Mobile POS / mPOS էջը */}
         <Route path="/biznes/trade/digital/mpos" element={<MobilePOSPage />} />
-
-        {/* EvocaSALARY էջը */}
         <Route path="/salary" element={<EvocasalaryMain />} />
-
-        {/* EvocaTOUCH էջը */}
         <Route path="/touch" element={<EvocaTouch />} />
-
         <Route path="/transfers" element={<Navigate to="/money-transfers" replace />} />
         <Route path="/qarter" element={<Qarter />} />
         <Route path="/cards" element={<CardsList />} />
         <Route path="/benefits" element={<EvocaBenefits />} />
         <Route path="/terms" element={<CardTerms />} />
         <Route path="/social-cards" element={<PensionCards />} />
-        
+        <Route path="/login" element={<Login />} />
+        <Route path="/mer-masin/reports/semiannual" element={<SemiannualPage />} />
+        <Route path="/mer-masin/reports/annual" element={<AnnualReportsPage />} />
+        <Route path="/mer-masin/announcements" element={<AnnouncementsPage />} />
+        <Route path="/mer-masin/news" element={<NewsPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/career" element={<CareerPage />} />
+        <Route path="/kariera/life" element={<EvocaLifePage />} />
+        <Route path="/kariera/culture" element={<CulturePage />} />
+        <Route path="/advantages" element={<Advantages />} />
+        <Route path="/faq" element={<FAQPage />} />
+        <Route path="/how-to-apply" element={<HowToApply />} />
+        <Route path="/jobs" element={<Jobs />} />
+        <Route path="/job-opportunities" element={<JobOpportunities />} />
+        <Route path="/jobs/internship" element={<Internship />} />
+        <Route path="/jobs/bridge" element={<EvocaBridge />} />
         <Route path="*" element={<Navigate to="/anhat" replace />} />
       </Routes>
     </BrowserRouter>
