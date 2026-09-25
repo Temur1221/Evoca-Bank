@@ -5,6 +5,7 @@ import SubHeader from "../SubHeader";
 import ImportantAccordion from "../ImportantAccordion";
 import ImportantGeneralRules from "../ImportantGeneralRules";
 import ImportantDocuments from "../ImportantDocuments";
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function ImportantInfo() {
   return (
@@ -19,6 +20,7 @@ export default function ImportantInfo() {
         <ImportantAccordion />
         <ImportantDocuments />
       </div>
+      <FloatingChatWidget/>
       <Footer />
     </div>
   );
