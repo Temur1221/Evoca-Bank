@@ -34,7 +34,6 @@ export default function MainNav({ activeTab }) {
     } else if (activeTab === 'mer-masin') {
       return (
         <>
-          {/* Այստեղ օգտագործում ենք Link դեպի /mer-masin/about */}
           <Link 
             to="/mer-masin/about" 
             onClick={() => setIsMenuOpen(false)}
@@ -42,9 +41,36 @@ export default function MainNav({ activeTab }) {
           >
             Evoca-ի մասին
           </Link>
-          <Link to="/mer-masin/tariffs" className="text-gray-800 hover:text-[#6200EE] transition whitespace-nowrap">Սակագներ</Link>
-          <Link to="/mer-masin/reports" className="text-gray-800 hover:text-[#6200EE] transition whitespace-nowrap">Հաշվետվություններ</Link>
-          <Link to="/mer-masin/announcements" className="text-gray-800 hover:text-[#6200EE] transition whitespace-nowrap">Հայտարարություններ</Link>
+          <Link to="/mer-masin/tariffs" onClick={() => setIsMenuOpen(false)} className="text-gray-800 hover:text-[#6200EE] transition whitespace-nowrap">Սակագներ</Link>
+          
+          <Link 
+            to="/mer-masin/reports" 
+            onClick={() => setIsMenuOpen(false)}
+            className="text-gray-800 hover:text-[#6200EE] transition whitespace-nowrap"
+          >
+            Հաշվետվություններ
+          </Link>
+
+          <Link to="/mer-masin/announcements" onClick={() => setIsMenuOpen(false)} className="text-gray-800 hover:text-[#6200EE] transition whitespace-nowrap">Հայտարարություններ</Link>
+        </>
+      );
+    } else if (activeTab === 'kariera') {
+      return (
+        <>
+          <Link 
+            to="/kariera/life" 
+            onClick={() => setIsMenuOpen(false)} 
+            className="text-gray-800 hover:text-[#6200EE] transition whitespace-nowrap font-medium"
+          >
+            Evoca Լայֆ
+          </Link>
+          <Link 
+            to="/jobs" 
+            onClick={() => setIsMenuOpen(false)} 
+            className="text-gray-800 hover:text-[#6200EE] transition whitespace-nowrap font-medium"
+          >
+            Աշխատանք և պրակտիկա
+          </Link>
         </>
       );
     }
@@ -53,7 +79,7 @@ export default function MainNav({ activeTab }) {
   return (
     <div className="relative bg-white border-b border-gray-100">
       <div className="flex items-center justify-between px-2 sm:px-8 py-2 sm:py-4">
-        {/* Լոգո */}
+        {/* Logo */}
         <Link to="/" className="text-2xl font-black text-gray-800 flex-shrink-0">
           <img 
             src="https://payments.evoca.am/assets/images/logo.png" 
@@ -62,12 +88,12 @@ export default function MainNav({ activeTab }) {
           />
         </Link>
 
-        {/* Դեսկտոպ հղումներ */}
+        {/* Desktop Links */}
         <div className="hidden min-[1149px]:flex items-center space-x-6 font-semibold text-sm">
           {renderLinks()}
         </div>
 
-        {/* Մենյուի կոճակ փոքր էկրանների համար */}
+        {/* Mobile Menu Button */}
         <div className="flex min-[1149px]:hidden items-center">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -85,13 +111,16 @@ export default function MainNav({ activeTab }) {
           </button>
         </div>
 
-        {/* Աջ կողմի կոճակ */}
-        <button className="bg-[#6200EE] text-white font-bold px-3 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm flex-shrink-0">
+        {/* EvocaONLINE button */}
+        <Link 
+          to="/login" 
+          className="bg-[#6200EE] hover:bg-[#5000cc] text-white font-bold px-3 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm flex-shrink-0 transition text-center"
+        >
           EvocaONLINE
-        </button>
+        </Link>
       </div>
 
-      {/* Բացվող (Dropdown) ցանկը փոքր էկրանների համար */}
+      {/* Mobile Dropdown */}
       {isMenuOpen && (
         <div className="min-[1149px]:hidden absolute top-full left-0 w-full bg-white shadow-xl border-b border-gray-100 py-3 px-4 z-50">
           <div className="flex flex-col space-y-2.5 font-semibold text-xs">
