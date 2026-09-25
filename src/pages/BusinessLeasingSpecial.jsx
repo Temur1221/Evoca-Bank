@@ -3,6 +3,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import BusinesSubNav from '../BusinesSubNav';
 import SpecialOfferSection from '../SpecialOfferSection'; // Ներմուծում ենք նոր ֆայլը
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function BusinessLeasingSpecial() {
   return (
@@ -13,7 +14,7 @@ export default function BusinessLeasingSpecial() {
       <main className="flex-grow w-full">
         <SpecialOfferSection />
       </main>
-
+      <FloatingChatWidget/>
       <Footer />
     </div>
   );
