@@ -67,8 +67,6 @@ export default function Accordion() {
                   <div className="space-y-3">
                     {item.content.split('\n').map((paragraph, pIdx) => {
                       if (!paragraph.trim()) return null;
-                      
-                      // Ստուգում ենք, թե արդյոք կետը սկսվում է թվով (օր. "1.", "2." և այլն)
                       const isNumbered = /^\d+\./.test(paragraph.trim());
 
                       if (isNumbered) {
