@@ -6,6 +6,7 @@ import Footer from "../Footer";
 import NonResidentHero from "../NonResidentHero";
 import NonResidentAccordion from "../NonResidentAccordion";
 import NonResidentDocuments from "../NonResidentDocuments";
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function NonResidentRemote() {
   return (
@@ -16,6 +17,7 @@ export default function NonResidentRemote() {
       <NonResidentAccordion/>
       <NonResidentDocuments/>
       <EvocaBanner />
+      <FloatingChatWidget/>
       <Footer />
     </>
   );
