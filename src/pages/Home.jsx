@@ -11,6 +11,7 @@ import PartnersSection from '../PartnersSection';
 import NewsSection from '../NewsSection';
 import ExchangeRates from '../ExchangeRates';
 import ReviewsSwiper from '../ReviewsSwiper';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <NewsSection/>
       <ExchangeRates/>
       <ReviewsSwiper/>
+      <FloatingChatWidget/>
       <Footer />
     </>
   );
