@@ -3,6 +3,7 @@ import Header from '../Header'
 import Footer from '../Footer'
 import MobilePOSContent from '../MobilePOSContent'
 import MPOSContent from '../MPOSContent'
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function MobilePOSPage() {
   return (
@@ -10,6 +11,7 @@ export default function MobilePOSPage() {
       <Header/>
       <MobilePOSContent/>
       <MPOSContent/>
+      <FloatingChatWidget/>
       <Footer/>  
     </>
 )
