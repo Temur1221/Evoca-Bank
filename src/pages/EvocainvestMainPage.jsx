@@ -4,6 +4,7 @@ import SecuritiesSubNav from '../SecuritiesSubNav'
 import Footer from '../Footer'
 import EvocainvestHero from '../EvocainvestHero'
 import EvocainvestDetails from '../EvocainvestDetails'
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function EvocainvestMainPage() {
   return (
@@ -12,6 +13,7 @@ export default function EvocainvestMainPage() {
     <SecuritiesSubNav/>
     <EvocainvestHero/>
     <EvocainvestDetails/>
+    <FloatingChatWidget/>
     <Footer/>
     </>
 )
