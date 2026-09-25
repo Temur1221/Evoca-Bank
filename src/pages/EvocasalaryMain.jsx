@@ -5,6 +5,7 @@ import EvocasalaryHero from '../EvocasalaryHero'
 import CapitalNewsSection from '../CapitalNewsSection'
 import SalaryDetails from '../SalaryDetails'
 import SalaryFAQ from '../SalaryFAQ'
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function EvocasalaryMain() {
   return (
@@ -14,6 +15,7 @@ export default function EvocasalaryMain() {
     <SalaryDetails/>
     <CapitalNewsSection />
     <SalaryFAQ/>
+    <FloatingChatWidget/>
     <Footer/>
     </>
 )
