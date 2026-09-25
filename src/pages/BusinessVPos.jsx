@@ -5,6 +5,7 @@ import EvocaBanner from '../EvocaBanner';
 import BusinessDigitalSubHeader from '../BusinessDigitalSubHeader';
 import VPosHeroSection from '../VPosHeroSection';
 import VPosDetailsContent from '../VPosDetailsContent';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function BusinessVPos() {
   return (
@@ -14,6 +15,7 @@ export default function BusinessVPos() {
         <VPosHeroSection/>
         <VPosDetailsContent/>
         <EvocaBanner/>
+        <FloatingChatWidget/>
         <Footer/>
     </>
 )
