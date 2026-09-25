@@ -27,7 +27,6 @@ export default function Avand() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans">
-      {/* Հիմնական բովանդակություն */}
       <div className="max-w-[1280px] w-full mx-auto px-4 md:px-8 py-8">
         <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-8">
           Ավանդներ
@@ -48,7 +47,6 @@ export default function Avand() {
                 key={item.id}
                 className="bg-white border-b border-gray-100 pb-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6"
               >
-                {/* Ձախ մաս՝ Նկար */}
                 <div className="w-full lg:w-[320px] h-[190px] rounded-2xl overflow-hidden shrink-0 shadow-sm bg-gray-50">
                   <img
                     src={item.imageUrl}
@@ -57,8 +55,7 @@ export default function Avand() {
                   />
                 </div>
 
-                {/* Մեջտեղի մաս */}
-                <div className="flex-1 space-y-3">
+=                <div className="flex-1 space-y-3">
                   <h2 className="text-xl md:text-2xl font-bold text-gray-900">
                     {item.title}
                   </h2>
@@ -91,7 +88,6 @@ export default function Avand() {
                   </div>
                 </div>
 
-                {/* Աջ մաս՝ Մանրամասն կոճակ */}
                 <div className="w-full lg:w-auto flex justify-end">
                   <a
                     href={item.detailsUrl || "#"}
