@@ -6,6 +6,7 @@ import InvestmentServices from '../InvestmentServices';
 import InvestmentDetails from '../InvestmentDetails';
 import InvestmentAccordion from '../InvestmentAccordion';
 import CapitalNewsSection from '../CapitalNewsSection';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function SecuritiesPage() {
   return (
@@ -20,7 +21,7 @@ export default function SecuritiesPage() {
           <CapitalNewsSection />
         </main>
       </div>
-
+      <FloatingChatWidget/>
       <Footer />
     </div>
   );
