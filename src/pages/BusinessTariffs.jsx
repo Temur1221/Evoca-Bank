@@ -4,6 +4,7 @@ import Footer from '../Footer';
 import BusinessDigitalSubHeader from '../BusinessDigitalSubHeader';
 import CapitalNewsSection from '../CapitalNewsSection';
 import TerminalTariffsContent from '../TerminalTariffsContent';
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function BusinessTariffs() {
   return (
@@ -12,6 +13,7 @@ export default function BusinessTariffs() {
       <BusinessDigitalSubHeader />
       <TerminalTariffsContent/>
       <CapitalNewsSection />
+      <FloatingChatWidget/>
       <Footer />
     </>
   );
