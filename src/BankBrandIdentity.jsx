@@ -6,7 +6,6 @@ export default function BankBrandIdentity() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-8 py-10 space-y-16">
       
-      {/* 1. Բանկի լոգոտիպը */}
       <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-sm space-y-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
           Բանկի լոգոտիպը
@@ -23,7 +22,6 @@ export default function BankBrandIdentity() {
         </div>
       </div>
 
-      {/* 2. Բանկի բրենդբուքը */}
       <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-sm space-y-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
           Բանկի բրենդբուքը
@@ -41,7 +39,6 @@ export default function BankBrandIdentity() {
         </div>
       </div>
 
-      {/* 3. Բանկի կորպորատիվ գույները */}
       <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-sm space-y-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
           Բանկի կորպորատիվ գույները
