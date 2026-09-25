@@ -8,6 +8,7 @@ import EvocaBanner from "../EvocaBanner";
 import MoneyTransfersBanner from "../MoneyTransfersBanner";
 import MoneyTransfersAccordion from "../MoneyTransfersAccordion";
 import MoneyTransfersDocuments from "../MoneyTransfersDocuments";
+import FloatingChatWidget from '../FloatingChatWidget'
 
 export default function MoneyTransfers() {
   return (
@@ -20,6 +21,7 @@ export default function MoneyTransfers() {
     <MoneyTransfersAccordion/>
     <MoneyTransfersDocuments/>
     <EvocaBanner/>
+    <FloatingChatWidget/>
     <Footer/>
     </>
   );
